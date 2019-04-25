@@ -9,5 +9,8 @@
         * Adding to the view count in MySQL database.
     * Top left--form for writing your message along with submit button "release the bottle!"
         * This will execute a POST request to our database, and we will add the message in our database
+
+    Thomas
+    
     
     
