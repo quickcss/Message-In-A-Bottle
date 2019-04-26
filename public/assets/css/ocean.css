@@ -10,6 +10,7 @@ body {
 
 canvas {
 	display: block;	
+	margin-bottom: 400px; 
 }
 
 @keyframes float {
@@ -17,7 +18,7 @@ canvas {
 		transform: translatey(0px);
 	}
 	50% {
-		transform: translatey(-100px);
+		transform: translatey(-50px);
 	}
 	100% {
 		transform: translatey(0px);
@@ -26,9 +27,15 @@ canvas {
 
 .bottle {
 	transform: translatey(0px);
-	animation: float 1s ease-in-out infinite;
+	animation: float 5s ease-in-out infinite;
+	z-index:1; 
+	position:absolute; 
+	top: 600px; 
 }
-/* 
+
+
+
+
 html {
 	box-sizing: border-box;
 }
@@ -42,13 +49,14 @@ html {
 body {
 	animation: skyChange 60s linear infinite;
 	background: deepskyblue;
+	margin: 0 auto; 
 }
 
 /* Container - Sky*/
-#sky {
+/* #sky {
 	width: 100vw;
 	height: 100vh;
-}
+} */
 
 /* Standard syntax */
 @keyframes skyChange {
@@ -301,4 +309,5 @@ body {
 	100% {
 		transform: rotate(360deg);
 	}
-} */
+}
+
