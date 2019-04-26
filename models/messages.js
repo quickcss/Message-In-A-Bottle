@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Message = sequelize.define("Message", {
+    var Messages = sequelize.define("Messages", {
       body: {
         type: DataTypes.STRING(150),
         allowNull: false,
@@ -9,7 +9,8 @@ module.exports = function(sequelize, DataTypes) {
       },
       viewCount: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 0
       }
     });
   
@@ -24,6 +25,6 @@ module.exports = function(sequelize, DataTypes) {
     //   });
     // };
   
-    return Message;
+    return Messages;
   };
   

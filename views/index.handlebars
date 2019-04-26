@@ -1,0 +1,15 @@
+<form id="message">
+    <div class="form-group">
+        <label for="body">Message:</label>
+        <textarea placeholder="Write a message for the bottle" class="form-control" rows="10" id="body"></textarea>
+        <button type="submit" class="btn btn-success submit">Submit</button>
+    </div>
+</form>
+
+{{#each Messages}}
+<div id="paper-background">
+    <div class="paper">
+        <p>{{body}}</p>
+    </div>
+</div>
+{{/each}}
