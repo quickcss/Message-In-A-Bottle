@@ -14,4 +14,7 @@ $(document).ready(function () {
         $(this).css("color", "black");
     });
     
+    $('.close').on('click', function() {
+        $('.paper').remove();
+    })
 });
