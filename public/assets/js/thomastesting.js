@@ -8,8 +8,8 @@ $(document).ready(function () {
     });
     //unrolls paper when clicked
     $('.paper').on('click', function() {
-        $(".paper").css("transition", "2s");
-        $(".paper").css("transform", "rotate3d(1,0,0,0deg)");
-        $(".paper").css("color", "black");
+        $(this).css("transition", "2s");
+        $(this).css("transform", "rotate3d(1,0,0,0deg)");
+        $(this).css("color", "black");
     })
 });
