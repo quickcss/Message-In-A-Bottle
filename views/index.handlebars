@@ -1,16 +1,25 @@
-<form id="message">
-    <div class="form-group">
-        <label for="body">Message:</label>
-        <textarea placeholder="Write a message for the bottle" class="form-control" rows="10" id="body"></textarea>
-        <button type="submit" class="btn btn-success submit">Submit</button>
+<div class="row">
+    <div id="form-bg" class="col s4">
+        <form id="message">
+            <div class="form-group">
+                <label for="body" style="font-size: 20px">Message:</label> <br>
+                <textarea placeholder="Write a message for the bottle" class="form-control" id="body"></textarea> <br>
+                <button type="submit" class="btn btn-success submit">Submit</button>
+            </div>
+        </form>
     </div>
-</form>
-
-{{#each Messages}}
-<div id="paper-background">
-    <div class="paper">
-        <p>{{body}}</p>
+    
+    <div class="col s7">
+        {{#each Messages}}
+        <div class="paper">
+            <div class="row">
+                <div class="col s2 offset-s10 close">X</div>
+            </div>
+            <p>{{body}}</p>
+        </div>
+        {{/each}}
     </div>
+<<<<<<< HEAD
 </div>
 {{/each}}
 
@@ -54,4 +63,6 @@
 </div>
 <div id="canvas" style="z-index:2">
     <canvas></canvas>
+=======
+>>>>>>> origin
 </div>

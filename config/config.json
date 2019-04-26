@@ -2,7 +2,11 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
+    "port": 3307,
+=======
     "port": 8889,
+>>>>>>> origin
     "database": "message_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

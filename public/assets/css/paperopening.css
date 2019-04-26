@@ -2,14 +2,41 @@ body{
     background-color: white;
 }
 
+#body{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 20px;
+    resize: none;
+    height: 250px;
+}
+
+.close:hover{
+    cursor: grab;
+}
+
+#form-bg{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 20px;
+    width: 500px;
+    top: 25px;
+    left: 25px;
+	padding: 25px;
+	margin: 20px 20px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
 .paper{
     /* background-color: green; */
-    height: 500px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 20px;
+    height: 380px;
     width: 500px;
     transition: 1s;
     position: relative;
 	padding: 50px;
-	margin: 0 auto;
+	margin: 20px auto;
 	background-color: #fff;
 	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
