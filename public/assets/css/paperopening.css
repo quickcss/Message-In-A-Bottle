@@ -17,6 +17,7 @@ body{
     font-family: Brush Script MT, Brush Script Std, cursive;
     font-size: 20px;
     width: 500px;
+    position: fixed;
     top: 25px;
     left: 25px;
 	padding: 25px;

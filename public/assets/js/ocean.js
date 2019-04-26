@@ -1,13 +1,14 @@
-const $ = {};
+const stolenWaves = {};
 
 /*========================================
 Utility
 ========================================*/
 
-$.PI = Math.PI;
-$.TAU = $.PI * 2;
 
-$.rand = function( min, max ) {
+stolenWaves.PI = Math.PI;
+stolenWaves.TAU = stolenWaves.PI * 2;
+
+stolenWaves.rand = function( min, max ) {
 	if ( !max ) {
 		var max = min;
 		min = 0;
@@ -19,85 +20,85 @@ $.rand = function( min, max ) {
 Initialize
 ========================================*/
 
-$.init = () => {
-	$.c = document.querySelector( 'canvas' );
-	$.ctx = $.c.getContext( '2d' );
-	$.simplex = new SimplexNoise();
-	$.events();
-	$.reset();
-	$.loop();
+stolenWaves.init = () => {
+	stolenWaves.c = document.querySelector( 'canvas' );
+	stolenWaves.ctx = stolenWaves.c.getContext( '2d' );
+	stolenWaves.simplex = new SimplexNoise();
+	stolenWaves.events();
+	stolenWaves.reset();
+	stolenWaves.loop();
 };
 
 /*========================================
 Reset
 ========================================*/
 
-$.reset = () => {
-	$.w = window.innerWidth;
-	$.h = window.innerHeight;
-	$.cx = $.w / 2;
-	$.cy = $.h / 2;
-	$.c.width = $.w;
-	$.c.height = $.h;
+stolenWaves.reset = () => {
+	stolenWaves.w = window.innerWidth;
+	stolenWaves.h = window.innerHeight;
+	stolenWaves.cx = stolenWaves.w / 2;
+	stolenWaves.cy = stolenWaves.h / 2;
+	stolenWaves.c.width = stolenWaves.w;
+	stolenWaves.c.height = stolenWaves.h;
 
-	$.count = Math.floor( $.w / 50 );
-	$.xoff = 0;
-	$.xinc = 0.05;	
-	$.yoff = 0;
-	$.yinc = 0.003;
-	$.goff = 0;
-	$.ginc = 0.003;
-	$.y = $.h * 0.66;
-	$.length = $.w + 10;
-	$.amp = 40;
+	stolenWaves.count = Math.floor( stolenWaves.w / 50 );
+	stolenWaves.xoff = 0;
+	stolenWaves.xinc = 0.05;	
+	stolenWaves.yoff = 0;
+	stolenWaves.yinc = 0.003;
+	stolenWaves.goff = 0;
+	stolenWaves.ginc = 0.003;
+	stolenWaves.y = stolenWaves.h * 0.66;
+	stolenWaves.length = stolenWaves.w + 10;
+	stolenWaves.amp = 40;
 };
 
 /*========================================
 Event
 ========================================*/
 
-$.events = () => {
-	window.addEventListener( 'resize', $.reset.bind( this ) );	
+stolenWaves.events = () => {
+	window.addEventListener( 'resize', stolenWaves.reset.bind( this ) );	
 };
 
 /*========================================
 Wave
 ========================================*/
 
-$.wave = () => {
-	$.ctx.beginPath();
-	let sway = $.simplex.noise2D( $.goff, 0 ) * $.amp;
-	for( let i = 0; i <= $.count; i++ ) {
-		$.xoff += $.xinc;
-		let x = $.cx - $.length / 2 + ( $.length / $.count ) * i;
-		let y = $.y + $.simplex.noise2D( $.xoff, $.yoff ) * $.amp + sway;
-		$.ctx[ i === 0 ? 'moveTo' : 'lineTo' ]( x, y );
+stolenWaves.wave = () => {
+	stolenWaves.ctx.beginPath();
+	let sway = stolenWaves.simplex.noise2D( stolenWaves.goff, 0 ) * stolenWaves.amp;
+	for( let i = 0; i <= stolenWaves.count; i++ ) {
+		stolenWaves.xoff += stolenWaves.xinc;
+		let x = stolenWaves.cx - stolenWaves.length / 2 + ( stolenWaves.length / stolenWaves.count ) * i;
+		let y = stolenWaves.y + stolenWaves.simplex.noise2D( stolenWaves.xoff, stolenWaves.yoff ) * stolenWaves.amp + sway;
+		stolenWaves.ctx[ i === 0 ? 'moveTo' : 'lineTo' ]( x, y );
 	}
-	$.ctx.lineTo( $.w, $.h );
-	$.ctx.lineTo( 0, $.h );
-	$.ctx.closePath();
-	$.ctx.fillStyle = 'hsla(210, 90%, 50%, 0.2)';
-	$.ctx.fill();
+	stolenWaves.ctx.lineTo( stolenWaves.w, stolenWaves.h );
+	stolenWaves.ctx.lineTo( 0, stolenWaves.h );
+	stolenWaves.ctx.closePath();
+	stolenWaves.ctx.fillStyle = 'hsla(210, 90%, 50%, 0.2)';
+	stolenWaves.ctx.fill();
 };
 
 /*========================================
 Loop
 ========================================*/
 
-$.loop = () => {
-	requestAnimationFrame( $.loop );
-	$.ctx.clearRect( 0, 0, $.w, $.h );
-	$.xoff = 0;
-	$.wave();
-	$.wave();
-	$.wave();
-	$.wave();
-	$.yoff += $.yinc;
-	$.goff += $.ginc;
+stolenWaves.loop = () => {
+	requestAnimationFrame( stolenWaves.loop );
+	stolenWaves.ctx.clearRect( 0, 0, stolenWaves.w, stolenWaves.h );
+	stolenWaves.xoff = 0;
+	stolenWaves.wave();
+	stolenWaves.wave();
+	stolenWaves.wave();
+	stolenWaves.wave();
+	stolenWaves.yoff += stolenWaves.yinc;
+	stolenWaves.goff += stolenWaves.ginc;
 };
 
 /*========================================
 Start
 ========================================*/
 
-$.init();
+stolenWaves.init();
