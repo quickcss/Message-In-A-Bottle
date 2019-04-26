@@ -61,23 +61,6 @@ $.events = () => {
 };
 
 /*========================================
-Bottle
-========================================*/
-// function draw() {
-
-//         var ctx = document.getElementById('canvas').getContext('2d');
-//         var img = new Image();
-//         img.onload = function() {
-//             ctx.drawImage(img, 50, 50, 100, 100);
-//         };
-//         // img.src = 'https://mdn.mozillademos.org/files/5395/backdrop.png';
-//         img.src = "../images/bottle.png"
-//         // ctx.font = '30px Arial'
-//         // ctx.fillText("hello world", 10, 50)
-//     }
-//     draw();
-
-/*========================================
 Wave
 ========================================*/
 
