@@ -1,0 +1,27 @@
+{
+  "name": "Message-In-A-Bottle",
+  "version": "1.0.0",
+  "description": "### Front End     * First enter website will display HTML page     * Populate the ocean with bottles         * This will execute a GET request and retrieve 5 bottles and populate the ocean.         * The user will click on the bottles and the message will display on the top-right.         * The bottle disappears when read.         * Adding to the view count in MySQL database.     * Top left--form for writing your message along with submit button \"release the bottle!\"         * This will execute a POST request to our database, and we will add the message in our database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quickcss/Message-In-A-Bottle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quickcss/Message-In-A-Bottle/issues"
+  },
+  "homepage": "https://github.com/quickcss/Message-In-A-Bottle#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.7.5"
+  }
+}
