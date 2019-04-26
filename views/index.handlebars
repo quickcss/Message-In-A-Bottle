@@ -1,27 +1,4 @@
-<div class="row">
-    <div id="form-bg" class="col s4">
-        <form id="message">
-            <div class="form-group">
-                <label for="body" style="font-size: 20px">Message:</label> <br>
-                <textarea placeholder="Write a message for the bottle" class="form-control" id="body"></textarea> <br>
-                <button type="submit" class="btn btn-success submit">Submit</button>
-            </div>
-        </form>
-    </div>
-    
-    <div class="col s7">
-        {{#each Messages}}
-        <div class="paper">
-            <div class="row">
-                <div class="col s2 offset-s10 close">X</div>
-            </div>
-            <p>{{body}}</p>
-        </div>
-        {{/each}}
-    </div>
-<<<<<<< HEAD
-</div>
-{{/each}}
+
 
 <div id="sky">
     <div class="theSun">
@@ -48,6 +25,31 @@
         <div class="cloud c3"></div>
     </div>
 
+{{!-- Putting form/paper inside Sky --}}
+<div class="row">
+    <div id="form-bg" class="col s4">
+        <form id="message">
+            <div class="form-group">
+                <label for="body" style="font-size: 20px">Message:</label> <br>
+                <textarea placeholder="Write a message for the bottle" class="form-control" id="body"></textarea> <br>
+                <button type="submit" class="btn btn-success submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col s7">
+        {{#each Messages}}
+        <div class="paper">
+            <div class="row">
+                <div class="col s2 offset-s10 close">X</div>
+            </div>
+            <p>{{body}}</p>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
 </div>
 <!-- </div> -->
 
@@ -63,6 +65,4 @@
 </div>
 <div id="canvas" style="z-index:2">
     <canvas></canvas>
-=======
->>>>>>> origin
 </div>

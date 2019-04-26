@@ -10,7 +10,7 @@ body {
 
 canvas {
 	display: block;	
-	margin-bottom: 400px; 
+	margin-bottom: 1700px; 
 }
 
 @keyframes float {
@@ -69,10 +69,10 @@ body {
 		background: deepskyblue;
 	}
 	32% {
-		background: aliceblue;
-	}
-	41% {
 		background: deepskyblue;
+	}
+	50% {
+		background: aliceblue;
 	}
 	70% {
 		background: deepskyblue;
@@ -100,7 +100,7 @@ body {
 	height: 100px;
 	position: absolute;
 	top: 15vh;
-	left: 30vw;
+	left: 60vw;
 	animation: sunpulse 2s alternate infinite;
 	border-radius: 50%;
 	background-image: radial-gradient(circle, #ffd200 95%, #f7971e);
