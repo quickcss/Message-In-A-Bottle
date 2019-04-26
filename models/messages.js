@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Message = sequelize.define("Message", {
       body: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(150),
         allowNull: false,
         validate: {
           len: [1,150]
