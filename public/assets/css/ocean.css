@@ -30,12 +30,14 @@ canvas {
 	animation: float 5s ease-in-out infinite;
 	z-index:1; 
 	position:absolute; 
-	top: 600px; 
+	top: 775px; 
 	width: 150px;
 	height: 150px;
 }
 
-
+.bottle:hover {
+	cursor: grab;
+}
 
 
 html {
