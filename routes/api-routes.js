@@ -10,7 +10,7 @@ router.get("/", function (req, res) {
             bottles = bottlesNumber;
         }
         for (var i = 0; i < bottles; i++) {
-            function randomNumGen () {
+            function randomNumGen() {
                 var randomNum = Math.floor(Math.random() * bottlesNumber) + 1
                 if (randomBottlesArr.includes(randomNum)) {
                     randomNumGen();
@@ -25,9 +25,15 @@ router.get("/", function (req, res) {
                 id: randomBottlesArr
             }
         }).then(function (data) {
-            console.log(bottlesNumber);
+            for (var i = 0; i < data.length; i++) {
+                data[i].randomY = Math.floor(Math.random() * 150) + 700;
+                data[i].randomX = Math.floor(Math.random() * 1920);
+                // randomArrX.push(Math.floor(Math.random() * 1920));
+            }
             console.log(data);
-            res.render("index", { Messages: data });
+            res.render("index", {
+                Messages: data
+            });
         })
     })
 });
