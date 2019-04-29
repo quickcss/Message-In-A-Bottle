@@ -1,5 +1,3 @@
-
-
 <div id="sky">
     <div class="theSun">
         <div class="ray_box">
@@ -25,19 +23,21 @@
         <div class="cloud c3"></div>
     </div>
 
-{{!-- Putting form/paper inside Sky --}}
-<div class="row">
-    <div id="form-bg" class="col s4">
-        <form id="message">
-            <div class="form-group">
-                <label for="body" style="font-size: 20px">Message:</label> <br>
-                <textarea placeholder="Write a message for the bottle" class="form-control" id="body"></textarea> <br>
-                <button type="submit" class="btn btn-success submit">Submit</button>
-            </div>
-        </form>
-    </div>
+    {{!-- Putting form/paper inside Sky --}}
+    <div class="row">
+        <div id="form-bg" class="col s4">
+            <form id="message">
+                <div class="form-group">
+                    <label for="body" style="font-size: 20px">Message:</label> <br>
+                    <textarea placeholder="Write a message for the bottle" class="form-control" id="body"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-success submit">Submit</button>
+                </div>
+            </form>
+        </div>
 
-    <div class="col s7">
+        {{!-- Creating bottles dynamically now --}}
+        {{!-- <div class="col s7">
         {{#each Messages}}
         <div class="paper">
             <div class="row">
@@ -46,23 +46,28 @@
             <p>{{body}}</p>
         </div>
         {{/each}}
+    </div> --}}
+
+        <div class="col s7">
+            {{#each Messages}}
+            <img class="bottle" data-body="{{body}}" src="assets/images/bottle.png" alt="bottle">
+            {{/each}}
+        </div>
     </div>
-</div>
+
+
+    {{!-- Paper unraveling --}}
+    {{!-- <div class="paper">
+        <div class="row">
+            <div class="col s2 offset-s10 close">X</div>
+        </div>
+        <p>{{body}}</p>
+    </div> --}}
 
 
 </div>
-<!-- </div> -->
-
-
-
 <br>
 <br>
-<br>
-<div>
-    <!-- <img class="bottle" src="../images/bottle.png" alt="bottle" width="150px" height="150px"
-            style="z-index:1; position:absolute; top: 400px; transform: translatey(0px); animation: float 6s ease-in-out infinite;"> -->
-    <img class="bottle" src="assets/images/bottle.png" alt="bottle">
-</div>
 <div id="canvas" style="z-index:2">
     <canvas></canvas>
 </div>
