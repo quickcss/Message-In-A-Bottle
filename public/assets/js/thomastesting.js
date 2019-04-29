@@ -1,10 +1,11 @@
 $(document).ready(function () {
     // When submit button is pressed executes a POST request
     $('#message').on('submit', function () {
-        // event.preventDefault();
+        event.preventDefault();
         $.post('/api/message', {body: $('#body').val().trim()}, function () {
+            $('#bottles').append('<img class="bottle" data-body="'+ $('#body').val().trim() +'" style="top: 775px; left: 250px" src="assets/images/bottle.png" alt="bottle">');
             $('#body').val('');
-            window.location.reload();
+            // window.location.reload();
         });
     });
 
@@ -17,8 +18,7 @@ $(document).ready(function () {
 
     $('.bottle').on('click', function() {
         console.log($(this).attr('data-body'));
-        var randomY = Math.floor(Math.random() * 200) + 400
-        console.log(randomY);
+        var randomY = Math.floor(Math.random() * 150) + 700;
         var randomX = Math.floor(Math.random() * 1920)
         $('#letter').append('<div class="paper"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p>' + $(this).attr('data-body') + '</p> </div>');
     });
