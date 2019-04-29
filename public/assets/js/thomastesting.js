@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     //unrolls paper when clicked
-    $('.paper').on('click', function() {
+    $(document).on('click','.paper', function() {
         $(this).css("transition", "2s");
         $(this).css("transform", "rotate3d(1,0,0,0deg)");
         $(this).css("color", "black");
@@ -17,17 +17,10 @@ $(document).ready(function () {
 
     $('.bottle').on('click', function() {
         console.log($(this).attr('data-body'));
-        $('.paper').append('<div class="paper">
-        <div class="row">
-            <div class="col s2 offset-s10 close">X</div>
-        </div>
-        <p></p>
-    </div>
-        ')
-
+        $('#letter').append('<div class="paper"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p>' + $(this).attr('data-body') + '</p> </div>');
     });
     
-    $('.close').on('click', function() {
+    $(document).on('click', '.close', function() {
         $('.paper').remove();
     });
 });
