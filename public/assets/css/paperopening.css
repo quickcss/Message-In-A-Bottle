@@ -35,7 +35,9 @@ body{
     height: 380px;
     width: 500px;
     transition: 1s;
-    position: relative;
+    position: fixed;
+    top: 25px;
+    left: 700px;
 	padding: 50px;
 	margin: 20px auto;
 	background-color: #fff;
