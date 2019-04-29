@@ -17,6 +17,9 @@ $(document).ready(function () {
 
     $('.bottle').on('click', function() {
         console.log($(this).attr('data-body'));
+        var randomY = Math.floor(Math.random() * 200) + 400
+        console.log(randomY);
+        var randomX = Math.floor(Math.random() * 1920)
         $('#letter').append('<div class="paper"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p>' + $(this).attr('data-body') + '</p> </div>');
     });
     

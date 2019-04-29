@@ -29,8 +29,7 @@ canvas {
 	transform: translatey(0px);
 	animation: float 5s ease-in-out infinite;
 	z-index:1; 
-	position:absolute; 
-	top: 775px; 
+	position:fixed; 
 	width: 150px;
 	height: 150px;
 }
