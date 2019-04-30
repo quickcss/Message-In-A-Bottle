@@ -38,7 +38,7 @@
         {{!-- Div to place bottles in when creating them dynamically both by Handlebars and JS --}}
         <div class="col s7" id="bottles">
             {{#each Messages}}
-            <img class="bottle" data-body="{{body}}" style="top: {{randomY}}px; left: {{randomX}}px" src="assets/images/bottle.png" alt="bottle">
+            <img class="bottle" data-body="{{body}}" view-count="{{viewCount}}" data-id="{{id}}" style="top: {{randomY}}px; left: {{randomX}}px" src="assets/images/bottle.png" alt="bottle">
             {{/each}}
         </div>
 
