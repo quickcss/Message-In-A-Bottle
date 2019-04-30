@@ -26,7 +26,7 @@ router.get("/", function (req, res) {
             }
         }).then(function (data) {
             for (var i = 0; i < data.length; i++) {
-                data[i].randomY = Math.floor(Math.random() * 150) + 700;
+                data[i].randomY = Math.floor(Math.random() * 100) + 750;
                 data[i].randomX = Math.floor(Math.random() * 1920);
                 // randomArrX.push(Math.floor(Math.random() * 1920));
             }
