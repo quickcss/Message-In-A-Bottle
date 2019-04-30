@@ -1,0 +1,56 @@
+<div id="sky">
+
+    {{!-- Creates the sky with clouds and sun --}}
+    <div class="theSun">
+        <div class="ray_box">
+            <div class="ray ray1"></div>
+            <div class="ray ray2"></div>
+            <div class="ray ray3"></div>
+            <div class="ray ray4"></div>
+            <div class="ray ray5"></div>
+            <div class="ray ray6"></div>
+            <div class="ray ray7"></div>
+            <div class="ray ray8"></div>
+            <div class="ray ray9"></div>
+            <div class="ray ray10"></div>
+        </div>
+    </div>
+    <div class="cloudwrapperTwo">
+        <div class="cloud c2"></div>
+    </div>
+    <div class="cloudwrapperThree">
+        <div class="cloud c3"></div>
+    </div>
+
+    {{!-- Bottle Form --}}
+    <div class="row">
+        <div id="form-bg" class="col s4">
+            <form id="message">
+                <div class="form-group">
+                    <label for="body" style="font-size: 20px">Message:</label> <br>
+                    <textarea placeholder="Write a message for the bottle" class="form-control" id="body"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-success submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        {{!-- Div to place bottles in when creating them dynamically both by Handlebars and JS --}}
+        <div class="col s7" id="bottles">
+            {{#each Messages}}
+            <img class="bottle" data-body="{{body}}" style="top: {{randomY}}px; left: {{randomX}}px" src="assets/images/bottle.png" alt="bottle">
+            {{/each}}
+        </div>
+
+    </div>
+    <div id="letter"> </div>
+</div>
+
+{{!-- Div for Ocean Waves --}}
+<div id="canvas" style="z-index:2">
+    <canvas></canvas>
+</div>
+
+<audio style="position: absolute; top: 25px; right: 25px" id="bgmusic" autoplay controls loop>
+  <source src="./assets/music/bgmusic.wav" type="audio/wav"/>
+</audio>
