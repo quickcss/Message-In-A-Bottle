@@ -55,13 +55,6 @@ body {
 	margin: 0 auto; 
 }
 
-/* Container - Sky*/
-/* #sky {
-	width: 100vw;
-	height: 100vh;
-} */
-
-/* Standard syntax */
 @keyframes skyChange {
 	0% {
 		background: rgb(134, 209, 235);
@@ -79,21 +72,10 @@ body {
 		background: rgb(134, 209, 235);
 	}
 	100% {
-		background: rgb(134, 209, 235); /* fallback for old browsers */
-		/* background: -webkit-linear-gradient(
-			to right,
-			rgb(134, 209, 235),
-			aliceblue
-		); Chrome 10-25, Safari 5.1-6 */
-		/* background: linear-gradient(
-			to right,
-			rgb(134, 209, 235),
-			aliceblue
-		); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background: rgb(134, 209, 235);
 	}
 }
 
-/* Sun  */
 .theSun {
 	opacity: 1;
 	box-shadow: 0px 0px 15px 3px yellow;
@@ -115,8 +97,6 @@ body {
 		box-shadow: 0 0 25px #ff0, 0 0 75px #ff0;
 	}
 }
-
-/* Clouds */
 
 .cloudwrapperOne,
 .cloudwrapperTwo,
@@ -192,8 +172,6 @@ body {
 		opacity: 0.4;
 	}
 }
-
-/* Sun rays */
 
 .ray_box {
 	position: absolute;

@@ -13,17 +13,12 @@
             <div class="ray ray10"></div>
         </div>
     </div>
-    <!-- 	<div class="cloudwrapperOne">
-		<div class="cloud c1"></div>
-	</div -->
     <div class="cloudwrapperTwo">
         <div class="cloud c2"></div>
     </div>
     <div class="cloudwrapperThree">
         <div class="cloud c3"></div>
     </div>
-
-    {{!-- Putting form/paper inside Sky --}}
     <div class="row">
         <div id="form-bg" class="col s4">
             <form id="message">
@@ -35,35 +30,19 @@
                 </div>
             </form>
         </div>
-
-        {{!-- Creating bottles dynamically now --}}
-        {{!-- <div class="col s7">
-        {{#each Messages}}
-        <div class="paper">
-            <div class="row">
-                <div class="col s2 offset-s10 close">X</div>
-            </div>
-            <p>{{body}}</p>
-        </div>
-        {{/each}}
-    </div> --}}
-
         <div class="col s7" id="bottles">
             {{#each Messages}}
             <img class="bottle" data-body="{{body}}" style="top: {{randomY}}px; left: {{randomX}}px" src="assets/images/bottle.png" alt="bottle">
             {{/each}}
         </div>
     </div>
-
     <div id="letter"> </div>
-
 </div>
 <br>
 <br>
 <div id="canvas" style="z-index:2">
     <canvas></canvas>
 </div>
-
 <audio style="position: absolute; top: 25px; right: 25px" id="bgmusic" autoplay controls loop>
-  <source src="./assets/music/bgmusic.wav" type="audio/wav" />
+  <source src="./assets/music/bgmusic.wav" type="audio/wav"/>
 </audio>

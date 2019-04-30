@@ -28,7 +28,6 @@ router.get("/", function (req, res) {
             for (var i = 0; i < data.length; i++) {
                 data[i].randomY = Math.floor(Math.random() * 100) + 750;
                 data[i].randomX = Math.floor(Math.random() * 1920);
-                // randomArrX.push(Math.floor(Math.random() * 1920));
             }
             console.log(data);
             res.render("index", {
@@ -44,7 +43,5 @@ router.post("/api/message", function (req, res) {
         res.end();
     });
 });
-
-
 
 module.exports = router;
