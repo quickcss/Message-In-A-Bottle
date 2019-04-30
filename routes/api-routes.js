@@ -40,8 +40,24 @@ router.get("/", function (req, res) {
 router.post("/api/message", function (req, res) {
     console.log(req.body);
     db.Messages.create(req.body).then(function (data) {
-        res.end();
+        res.json(data);
     });
 });
+
+router.put("/api/message/viewcount", function (req, res) {
+    db.Messages.findOne({
+        where: {
+            id: req.body.id
+        }
+    }).then(results => {
+        db.Messages.update({
+            viewCount: results.viewCount + 1
+        },{
+            where: {
+                id: req.body.id
+            }
+        }).then(result => res.json(result))
+    })
+})
 
 module.exports = router;

@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     $('#message').on('submit', function () {
         event.preventDefault();
-        $.post('/api/message', { body: $('#body').val().trim() }, function () {
-            $('#bottles').append('<img class="bottle" data-read="false" data-body="' + $('#body').val().trim() + '" style="top:' + (Math.floor(Math.random() * 100) + 750) + 'px; left: ' + (Math.floor(Math.random() * 1920)) + 'px" src="assets/images/bottle.png" alt="bottle">');
+        $.post('/api/message', { body: $('#body').val().trim() }, function (response) {
+            $('#bottles').append('<img class="bottle" view-count="'+response.viewCount+'" data-id="'+response.id+'" data-read="false" data-body="' + $('#body').val().trim() + '" style="top:' + (Math.floor(Math.random() * 100) + 750) + 'px; left: ' + (Math.floor(Math.random() * 1920)) + 'px" src="assets/images/bottle.png" alt="bottle">');
             $('#body').val('');
         });
     });
@@ -16,7 +16,8 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.paper', function () {
-        var paper = $(this);
+		var paper = $(this);
+		var messageId = paper.attr('data-id');
         sound.src = 'assets/music/paperscroll.wav'
         sound.play()
         var msg = new SpeechSynthesisUtterance($(this).attr('data-body'));
@@ -26,18 +27,31 @@ $(document).ready(function () {
         setTimeout(function () {
             if (paper.attr('data-read') === 'false') {
                 window.speechSynthesis.speak(msg);
-                paper.attr('data-read', 'true');
+				paper.attr('data-read', 'true');
+				updateViews(messageId);
             }
-        }, 2000)
-
+		}, 2000)
     });
 
     $(document).on('click', '.bottle', function () {
         if (paperExist === false) {
-            $('#letter').append('<div class="paper" data-read="false" data-body="' + $(this).attr('data-body') + '"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p>' + $(this).attr('data-body') + '</p> </div>');
+            $('#letter').append('<div class="paper" data-id="' + $(this).attr('data-id') + '" data-read="false" data-body="' + $(this).attr('data-body') + '"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p>' + $(this).attr('data-body') + '</p> <p>View Count: '+$(this).attr('view-count')+'</p></div>');
             paperExist = true;
-        }
-    });
+		}
+	});
+	
+	function updateViews(id) {
+		$.ajax({
+			method: "PUT",
+			url: "/api/message/viewcount",
+			data: {
+				id,
+			}
+		})
+		.then(function() {
+			console.log(data)
+		})
+	}
 });
 
 const stolenWaves = {};
