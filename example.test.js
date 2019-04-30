@@ -26,16 +26,15 @@ describe("Serene Ocean Messages", function () {
             .click(".paper")
             .wait(2000)
             .evaluate(function () {
-                return document.querySelector('.paper').val();
+                return document.querySelector('#burrito').value();
             })
             .end()
             // Asset the title is as expected
             .then(function (title) {
-                console.log(title);
                 expect(title).toEqual("NIGHTMARE TESTING!");
                 done();
             });
-    }, 30000);
+    }, 99000);
 
     // it("should present a link to course catalog after login", function (done) {
     //     return Nightmare({
