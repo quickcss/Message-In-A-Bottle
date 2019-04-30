@@ -64,32 +64,32 @@ body {
 /* Standard syntax */
 @keyframes skyChange {
 	0% {
-		background: deepskyblue;
+		background: rgb(134, 209, 235);
 	}
 	25% {
-		background: deepskyblue;
+		background: rgb(134, 209, 235);
 	}
 	32% {
-		background: deepskyblue;
+		background: rgb(134, 209, 235);
 	}
 	50% {
 		background: aliceblue;
 	}
 	70% {
-		background: deepskyblue;
+		background: rgb(134, 209, 235);
 	}
 	100% {
-		background: #00d2ff; /* fallback for old browsers */
-		background: -webkit-linear-gradient(
+		background: rgb(134, 209, 235); /* fallback for old browsers */
+		/* background: -webkit-linear-gradient(
 			to right,
-			#3a7bd5,
-			#00d2ff
-		); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(
+			rgb(134, 209, 235),
+			aliceblue
+		); Chrome 10-25, Safari 5.1-6 */
+		/* background: linear-gradient(
 			to right,
-			#3a7bd5,
-			#00d2ff
-		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			rgb(134, 209, 235),
+			aliceblue
+		); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	}
 }
 

@@ -48,7 +48,7 @@
         {{/each}}
     </div> --}}
 
-        <div class="col s7">
+        <div class="col s7" id="bottles">
             {{#each Messages}}
             <img class="bottle" data-body="{{body}}" style="top: {{randomY}}px; left: {{randomX}}px" src="assets/images/bottle.png" alt="bottle">
             {{/each}}
@@ -63,3 +63,7 @@
 <div id="canvas" style="z-index:2">
     <canvas></canvas>
 </div>
+
+<audio style="position: absolute; top: 25px; right: 25px" id="bgmusic" autoplay controls loop>
+  <source src="./assets/music/bgmusic.wav" type="audio/wav" />
+</audio>
