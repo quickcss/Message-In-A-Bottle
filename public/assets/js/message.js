@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.bottle', function () {
         if (paperExist === false) {
-            $('#letter').append('<div class="paper" data-id="' + $(this).attr('data-id') + '" data-read="false" data-body="' + $(this).attr('data-body') + '"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p>' + $(this).attr('data-body') + '</p> <p>View Count: '+$(this).attr('view-count')+'</p></div>');
+            $('#letter').append('<div class="paper" data-id="' + $(this).attr('data-id') + '" data-read="false" data-body="' + $(this).attr('data-body') + '"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p id="burrito">' + $(this).attr('data-body') + '</p> <p>View Count: '+$(this).attr('view-count')+'</p></div>');
             paperExist = true;
 		}
 	});
