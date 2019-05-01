@@ -80,7 +80,7 @@ $(document).ready(function () {
 	$('#message').on('submit', function () {
 		event.preventDefault();
 		$.post('/api/message', { body: $('#body').val().trim() }, function (response) {
-			$('#bottles').append('<img class="bottle" view-count="' + response.viewCount + '" data-id="' + response.id + '" data-read="false" data-body="' + $('#body').val().trim() + '" style="top:' + (Math.floor(Math.random() * 100) + 750) + 'px; left: ' + (Math.floor(Math.random() * 1920)) + 'px" src="assets/images/bottle.png" alt="bottle">');
+			$('#bottles').append('<img class="bottle" view-count="' + response.viewCount + '" data-id="' + response.id + '" data-read="false" data-body="' + $('#body').val().trim() + '" style="animation: float '+ (Math.random() * 1 + 4) +'s ease-in-out infinite; top:' + (Math.floor(Math.random() * 100) + 775) + 'px; left: ' + (Math.floor(Math.random() * 1920)) + 'px" src="assets/images/bottle.png" alt="bottle">');
 			$('#body').val('');
 		});
 	});
