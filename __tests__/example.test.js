@@ -13,7 +13,7 @@ describe("Serene Ocean Messages", function () {
             show: true
         })
             .goto("http://localhost:8080/")
-            // Just to be safe.d
+            // Just to be safe.
             .wait("#body")
             // Click the login button.
             .click("#body")
