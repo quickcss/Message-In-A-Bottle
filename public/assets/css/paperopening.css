@@ -3,7 +3,7 @@ body{
 }
 
 #body{
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: Apple Chancery, cursive;
     font-size: 20px;
     resize: none;
     height: 250px;
@@ -14,7 +14,7 @@ body{
 }
 
 #form-bg{
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: Apple Chancery, cursive;
     font-size: 20px;
     z-index: 2002;
     width: 500px;
@@ -31,7 +31,7 @@ body{
 
 .paper{
     /* background-color: green; */
-    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-family: Apple Chancery, cursive;
     font-size: 20px;
     z-index: 2002;
     height: 380px;
