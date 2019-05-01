@@ -1,6 +1,6 @@
 # Message-In-A-Bottle
 
-### Front End
+### Pseudo-code
     * First enter website will display HTML page
     * Populate the ocean with bottles
         * This will execute a GET request and retrieve 5 bottles and populate the ocean.

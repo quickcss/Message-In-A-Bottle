@@ -3,7 +3,7 @@ body{
 }
 
 #body{
-    font-family: URW Chancery L, cursive;
+    font-family: 'Kaushan Script', cursive;
     font-size: 20px;
     resize: none;
     height: 250px;
@@ -14,7 +14,7 @@ body{
 }
 
 #form-bg{
-    font-family: URW Chancery L, cursive;
+    font-family: 'Kaushan Script', cursive;
     font-size: 20px;
     z-index: 2002;
     width: 500px;
