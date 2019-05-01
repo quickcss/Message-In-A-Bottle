@@ -64,12 +64,4 @@ router.put("/api/message/viewcount", function (req, res) {
     })
 })
 
-// router.get("/api/message/viewcount/:id", function(req, res) {
-//     db.Messages.findOne({
-//         where: {
-//             id: req.params.id
-//         }
-//     })
-// })
-
 module.exports = router;
