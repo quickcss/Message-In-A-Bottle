@@ -20,11 +20,7 @@
   "homepage": "https://github.com/quickcss/Message-In-A-Bottle#readme",
   "jest": {
     "automock": false,
-    "verbose": true,
-    "collectCoverageFrom": [
-      "example.js"
-    ],
-    "collectCoverage": false
+    "verbose": true
   },
   "dependencies": {
     "express": "^4.16.4",
