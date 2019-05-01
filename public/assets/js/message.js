@@ -113,7 +113,7 @@ $(document).ready(function () {
 
 	$(document).on('click', '.bottle', function () {
 		if (paperExist === false) {
-			$('#letter').append('<div class="paper" data-id="' + $(this).attr('data-id') + '" data-read="false" data-body="' + $(this).attr('data-body') + '"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p id="burrito">' + $(this).attr('data-body') + '</p> <p>View Count: ' + $(this).attr('view-count') + '</p></div>');
+			$('#letter').append('<div class="paper" data-id="' + $(this).attr('data-id') + '" data-read="false" data-body="' + $(this).attr('data-body') + '"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p id="burrito">' + $(this).attr('data-body') + '</p> <p class="view-count">View Count: ' + (parseInt($(this).attr('view-count')) + 1) + '</p></div>');
 			paperExist = true;
 		}
 	});
@@ -126,8 +126,9 @@ $(document).ready(function () {
 				id,
 			}
 		})
-			.then(function () {
-				console.log(data)
+			.then(function (data) {
+				console.log("Data: ", data)
+				$('.view-count').text('View Count: ' + data.newViews)
 			});
 	};
 });

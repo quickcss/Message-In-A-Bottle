@@ -51,14 +51,25 @@ router.put("/api/message/viewcount", function (req, res) {
             id: req.body.id
         }
     }).then(results => {
+        var newViewCount = results.viewCount + 1;
         db.Messages.update({
-            viewCount: results.viewCount + 1
+            viewCount: newViewCount
         },{
             where: {
                 id: req.body.id
             }
-        }).then(result => res.json(result))
+        }).then(() => res.json({
+            newViews: newViewCount
+        }))
     })
 })
+
+// router.get("/api/message/viewcount/:id", function(req, res) {
+//     db.Messages.findOne({
+//         where: {
+//             id: req.params.id
+//         }
+//     })
+// })
 
 module.exports = router;
