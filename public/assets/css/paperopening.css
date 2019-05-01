@@ -16,6 +16,7 @@ body{
 #form-bg{
     font-family: Brush Script MT, Brush Script Std, cursive;
     font-size: 20px;
+    z-index: 2002;
     width: 500px;
     position: fixed;
     top: 25px;
@@ -32,6 +33,7 @@ body{
     /* background-color: green; */
     font-family: Brush Script MT, Brush Script Std, cursive;
     font-size: 20px;
+    z-index: 2002;
     height: 380px;
     width: 500px;
     transition: 1s;
