@@ -77,6 +77,8 @@ $(document).ready(function () {
 	//Starts the waves
 	stolenWaves.init();
 
+	sound.src = 'assets/music/paperscroll.wav';
+
 	$('#message').on('submit', function () {
 		event.preventDefault();
 		$.post('/api/message', { body: $('#body').val().trim() }, function (response) {
@@ -87,6 +89,7 @@ $(document).ready(function () {
 	var paperExist = false;
 
 	$(document).on('click', '.close', function () {
+		sound.play();
 		$('.paper').remove();
 		paperExist = false;
 	});
@@ -94,8 +97,7 @@ $(document).ready(function () {
 	$(document).on('click', '.paper', function () {
 		var paper = $(this);
 		var messageId = paper.attr('data-id');
-		sound.src = 'assets/music/paperscroll.wav';
-		sound.play();
+		if (paper.attr('data-read') === 'false') {sound.play();}
 		var msg = new SpeechSynthesisUtterance($(this).attr('data-body'));
 		$(this).css("transition", "2s");
 		$(this).css("transform", "rotate3d(1,0,0,0deg)");
