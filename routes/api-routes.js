@@ -28,8 +28,9 @@ router.get("/", function (req, res) {
         }).then(function (data) {
             //Creates random coordinates for the bottles
             for (var i = 0; i < data.length; i++) {
-                data[i].randomY = Math.floor(Math.random() * 100) + 750;
+                data[i].randomY = Math.floor(Math.random() * 100) + 775;
                 data[i].randomX = Math.floor(Math.random() * 1920);
+                data[i].randomTimer = Math.random() * 1.5 + 3.5;
             };
             res.render("index", {
                 Messages: data
