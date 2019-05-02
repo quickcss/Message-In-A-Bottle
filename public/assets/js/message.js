@@ -97,22 +97,24 @@ $(document).ready(function () {
 	$(document).on('click', '.paper', function () {
 		var paper = $(this);
 		var messageId = paper.attr('data-id');
-		if (paper.attr('data-read') === 'false') {sound.play();}
+		if (paper.attr('data-read') === 'false') {
+			sound.play();
+			updateViews(messageId);}
+			paper.attr('data-read', 'true');
+			setTimeout(function () {
+					window.speechSynthesis.speak(msg);
+			}, 2000);
 		var msg = new SpeechSynthesisUtterance($(this).attr('data-body'));
 		$(this).css("transition", "2s");
 		$(this).css("transform", "rotate3d(1,0,0,0deg)");
 		$(this).css("color", "black");
-		setTimeout(function () {
-			if (paper.attr('data-read') === 'false') {
-				window.speechSynthesis.speak(msg);
-				paper.attr('data-read', 'true');
-				updateViews(messageId);
-			}
-		}, 2000);
+
 	});
 
 	$(document).on('click', '.bottle', function () {
 		if (paperExist === false) {
+			var bottle = $(this);
+			var messageId = bottle.attr('data-id')
 			$('#letter').append('<div class="paper" data-id="' + $(this).attr('data-id') + '" data-read="false" data-body="' + $(this).attr('data-body') + '"> <div class="row"> <div class="col s2 offset-s10 close">X</div> </div> <p id="burrito">' + $(this).attr('data-body') + '</p> <p class="view-count">View Count: </p></div>');
 			paperExist = true;
 		}
