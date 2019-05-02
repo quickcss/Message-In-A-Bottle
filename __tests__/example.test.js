@@ -23,7 +23,7 @@ describe("Serene Ocean Messages", function () {
         return Nightmare({
             show: true
         })
-            .goto("http://localhost:8080/")
+            .goto("http://localhost:8087/")
             // Just to be safe.
             .wait("#body")
             // Click the login button.

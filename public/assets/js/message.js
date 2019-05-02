@@ -99,11 +99,12 @@ $(document).ready(function () {
 		var messageId = paper.attr('data-id');
 		if (paper.attr('data-read') === 'false') {
 			sound.play();
-			updateViews(messageId);}
+			updateViews(messageId);
 			paper.attr('data-read', 'true');
 			setTimeout(function () {
 					window.speechSynthesis.speak(msg);
 			}, 2000);
+		}
 		var msg = new SpeechSynthesisUtterance($(this).attr('data-body'));
 		$(this).css("transition", "2s");
 		$(this).css("transform", "rotate3d(1,0,0,0deg)");
